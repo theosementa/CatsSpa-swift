@@ -11,6 +11,8 @@
 		D9ADB1AF2F6C686B00FEDA12 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = D9ADB1AE2F6C686B00FEDA12 /* Models */; };
 		D9ADB1B32F6C6AA600FEDA12 /* Repositories in Frameworks */ = {isa = PBXBuildFile; productRef = D9ADB1B22F6C6AA600FEDA12 /* Repositories */; };
 		D9ADB1B52F6C6AA600FEDA12 /* Stores in Frameworks */ = {isa = PBXBuildFile; productRef = D9ADB1B42F6C6AA600FEDA12 /* Stores */; };
+		D9ADB1BD2F6C731400FEDA12 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = D9ADB1BC2F6C731400FEDA12 /* Home */; };
+		D9ADB1BF2F6C731500FEDA12 /* Providers in Frameworks */ = {isa = PBXBuildFile; productRef = D9ADB1BE2F6C731500FEDA12 /* Providers */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 				D9ADB1B32F6C6AA600FEDA12 /* Repositories in Frameworks */,
 				D9ADB1AF2F6C686B00FEDA12 /* Models in Frameworks */,
 				D9ADB1B52F6C6AA600FEDA12 /* Stores in Frameworks */,
+				D9ADB1BF2F6C731500FEDA12 /* Providers in Frameworks */,
+				D9ADB1BD2F6C731400FEDA12 /* Home in Frameworks */,
 				D9ADB1AC2F6C65AC00FEDA12 /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +111,8 @@
 				D9ADB1AE2F6C686B00FEDA12 /* Models */,
 				D9ADB1B22F6C6AA600FEDA12 /* Repositories */,
 				D9ADB1B42F6C6AA600FEDA12 /* Stores */,
+				D9ADB1BC2F6C731400FEDA12 /* Home */,
+				D9ADB1BE2F6C731500FEDA12 /* Providers */,
 			);
 			productName = CatsSpa;
 			productReference = D9ADB1572F6C646B00FEDA12 /* CatsSpa.app */;
@@ -414,6 +420,14 @@
 		D9ADB1B42F6C6AA600FEDA12 /* Stores */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Stores;
+		};
+		D9ADB1BC2F6C731400FEDA12 /* Home */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Home;
+		};
+		D9ADB1BE2F6C731500FEDA12 /* Providers */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Providers;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -10,11 +10,11 @@ import Models
 import Repositories
 
 @Observable
-public final class DefaultCatStore: CatStore {
-    @MainActor public static let shared = DefaultCatStore()
+public final class DefaultCatStore: CatStore, @unchecked Sendable {
+    public static let shared = DefaultCatStore()
     
     public var cats: [CatDomain] = []
-    internal var repository: CatRepository
+    public var repository: CatRepository
     
     private init(repository: CatRepository = DefaultCatRepository()) {
         self.repository = repository
