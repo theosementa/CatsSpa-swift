@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Utilities
 
 public struct CatDomain: Identifiable {
     public let id: UUID = UUID()
@@ -34,8 +35,18 @@ public extension CatDomain {
     
     static var mocks: [CatDomain] {
         return [
-            .init(name: "Una", image: .imageUna, birthday: .now, sex: .female),
-            .init(name: "Salem", image: .imageSalem, birthday: .now, sex: .female) // 15/08/2023
+            .init(
+                name: "Una",
+                image: .imageUna,
+                birthday: .now,
+                sex: .female
+            ),
+            .init(
+                name: "Salem",
+                image: .imageSalem,
+                birthday: Date.create(day: 15, month: 8, year: 2023),
+                sex: .female
+            )
         ]
     }
     
