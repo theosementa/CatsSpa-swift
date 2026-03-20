@@ -1,16 +1,49 @@
 //
-//  SwiftUIView.swift
+//  HomeScreen.swift
 //  Features
 //
 //  Created by Theo Sementa on 19/03/2026.
 //
 
 import SwiftUI
+import Models
+import DesignSystem
 
-struct HomeScreen: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+public struct HomeScreen: View {
+
+    @State private var viewModel = ViewModel()
+
+    private let columns = [
+        GridItem(.flexible(), spacing: 16),
+        GridItem(.flexible(), spacing: 16)
+    ]
+
+    public init() {}
+
+    public var body: some View {
+        NavigationStack {
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 16) {
+                    ForEach(viewModel.cats) { cat in
+                        CatCardView(cat: cat)
+                    }
+                }
+                .padding(16)
+            }
+            .navigationTitle("PURR-FECT SPA")
+            .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Image(systemName: "pawprint.fill")
+                        .foregroundStyle(Color(red: 0.62, green: 0.30, blue: 0.92))
+                }
+            }
+        }
+        .onAppear {
+            viewModel.load()
+        }
     }
+
 }
 
 #Preview {

@@ -32,7 +32,16 @@ public struct CatDomain: Identifiable {
 }
 
 public extension CatDomain {
-    
+
+    var ageDescription: String {
+        let now = Date.now
+        let years = Calendar.current.dateComponents([.year], from: birthday, to: now).year ?? 0
+        if years > 0 { return "\(years) \(years == 1 ? "year" : "years")" }
+        let months = Calendar.current.dateComponents([.month], from: birthday, to: now).month ?? 0
+        if months > 0 { return "\(months) \(months == 1 ? "month" : "months")" }
+        return "Newborn"
+    }
+
     static var mocks: [CatDomain] {
         return [
             .init(

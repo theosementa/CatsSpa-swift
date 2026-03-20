@@ -25,9 +25,13 @@ extension HomeScreen {
 }
 
 extension HomeScreen.ViewModel {
-    
+
     var cats: [CatDomain] {
         return provider.cats(by: .enrollmentDate)
     }
-    
+
+    func load() {
+        provider.fetchCats()
+    }
+
 }

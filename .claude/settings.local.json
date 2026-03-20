@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/tsementa/Code/Swift/Projects/iOS/CatsSpa/CatsSpa.xcodeproj -name *.pbxproj)"
+    ]
+  }
+}

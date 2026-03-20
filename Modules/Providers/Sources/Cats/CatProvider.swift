@@ -18,7 +18,12 @@ public protocol CatProvider {
 }
 
 public extension CatProvider {
-    
+
+    func fetchCats() {
+        var mutableStore = store
+        mutableStore.fetchAll()
+    }
+
     func cats(by scope: CatScope) -> [CatDomain] {
         switch scope {
         case .enrollmentDate:
@@ -26,5 +31,5 @@ public extension CatProvider {
                 .sorted { $0.enrollmentDate > $1.enrollmentDate }
         }
     }
-    
+
 }

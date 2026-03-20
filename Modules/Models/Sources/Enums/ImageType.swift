@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ImageType {
+public enum ImageType: String {
     
     case imageUna
     case imageSalem

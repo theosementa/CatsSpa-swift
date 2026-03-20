@@ -6,17 +6,28 @@
 //
 
 import SwiftUI
+import Home
 
 struct ContentView: View {
+
+    @State private var isLoading = true
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            if isLoading {
+                LoadingScreen {
+                    withAnimation(.easeInOut(duration: 0.6)) {
+                        isLoading = false
+                    }
+                }
+                .transition(.opacity)
+            } else {
+                HomeScreen()
+                    .transition(.opacity)
+            }
         }
-        .padding()
     }
+
 }
 
 #Preview {
