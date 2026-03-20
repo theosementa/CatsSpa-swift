@@ -29,6 +29,7 @@ public struct HomeScreen: View {
                     }
                 }
                 .padding(16)
+                .redacted(reason: viewModel.isSkeletonLoading ? .placeholder : [])
             }
             .navigationTitle("PURR-FECT SPA")
             .navigationBarTitleDisplayMode(.large)
@@ -41,6 +42,9 @@ public struct HomeScreen: View {
         }
         .onAppear {
             viewModel.load()
+        }
+        .task {
+            await viewModel.startSkeletonLoading()
         }
     }
 
