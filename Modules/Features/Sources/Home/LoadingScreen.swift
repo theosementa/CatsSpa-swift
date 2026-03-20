@@ -93,7 +93,7 @@ private extension LoadingScreen {
             }
             .frame(height: 5)
         }
-        .animation(.linear(duration: 0.05), value: viewModel.progress)
+        .animation(.linear, value: viewModel.progress)
     }
 
 }

@@ -20,12 +20,9 @@ extension LoadingScreen {
 
         @MainActor
         func startLoading() async {
-            let totalSteps = 60
-            let stepDuration: Double = 3.0 / Double(totalSteps)
-
-            for step in 1...totalSteps {
-                try? await Task.sleep(for: .seconds(stepDuration))
-                progress = Double(step) / Double(totalSteps)
+            for step in 1...4 {
+                try? await Task.sleep(for: .seconds(1))
+                progress = Double(step) / 4.0
             }
         }
 
