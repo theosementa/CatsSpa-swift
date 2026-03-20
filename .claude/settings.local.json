@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(find /Users/tsementa/Code/Swift/Projects/iOS/CatsSpa/CatsSpa.xcodeproj -name *.pbxproj)"
+      "Bash(find /Users/tsementa/Code/Swift/Projects/iOS/CatsSpa/CatsSpa.xcodeproj -name *.pbxproj)",
+      "Bash(mkdir -p Screens/Home Screens/Loading)",
+      "Bash(mv HomeScreen.swift Screens/Home/HomeScreen.swift)",
+      "Bash(mv HomeScreen+ViewModel.swift Screens/Home/HomeScreen+ViewModel.swift)",
+      "Bash(mv LoadingScreen.swift Screens/Loading/LoadingScreen.swift)",
+      "Bash(mv LoadingScreen+ViewModel.swift Screens/Loading/LoadingScreen+ViewModel.swift)"
     ]
   }
 }

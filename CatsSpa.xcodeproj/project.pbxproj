@@ -14,10 +14,12 @@
 		D9ADB1BD2F6C731400FEDA12 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = D9ADB1BC2F6C731400FEDA12 /* Home */; };
 		D9ADB1BF2F6C731500FEDA12 /* Providers in Frameworks */ = {isa = PBXBuildFile; productRef = D9ADB1BE2F6C731500FEDA12 /* Providers */; };
 		D9ADB1C32F6D0CFE00FEDA12 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = D9ADB1C22F6D0CFE00FEDA12 /* Utilities */; };
+		D9ADB1F92F6D181600FEDA12 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D9ADB1F82F6D181600FEDA12 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D9ADB1572F6C646B00FEDA12 /* CatsSpa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatsSpa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9ADB1F82F6D181600FEDA12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -67,6 +69,7 @@
 		D9ADB14E2F6C646B00FEDA12 = {
 			isa = PBXGroup;
 			children = (
+				D9ADB1F82F6D181600FEDA12 /* README.md */,
 				D9ADB1592F6C646B00FEDA12 /* CatsSpa */,
 				D9ADB1A42F6C64BD00FEDA12 /* Modules */,
 				D9ADB1A82F6C658D00FEDA12 /* Frameworks */,
@@ -160,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9ADB1F92F6D181600FEDA12 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
