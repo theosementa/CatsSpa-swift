@@ -19,7 +19,7 @@ public struct LoadingScreen: View {
 
     public var body: some View {
         ZStack {
-            Color(red: 0.05, green: 0.05, blue: 0.12)
+            Color.Background.bg50
                 .ignoresSafeArea()
 
             VStack(spacing: 0) {
@@ -49,13 +49,7 @@ private extension LoadingScreen {
         VStack(spacing: 20) {
             ZStack {
                 Circle()
-                    .fill(
-                        LinearGradient(
-                            colors: [Color(red: 0.6, green: 0.3, blue: 0.9), Color(red: 0.3, green: 0.1, blue: 0.7)],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
+                    .fill(Color.Primary.p500)
                     .frame(width: 100, height: 100)
 
                 Image(systemName: "pawprint.fill")
@@ -65,12 +59,10 @@ private extension LoadingScreen {
 
             VStack(spacing: 8) {
                 Text("PURR-FECT SPA")
-                    .appFont(AppFont.Display.largeBold)
-                    .foregroundStyle(.white)
+                    .font(AppFont.Display.largeBold, color: .Base.white)
 
                 Text("Luxury care for your feline friends")
-                    .appFont(AppFont.Body.smallRegular)
-                    .foregroundStyle(.white.opacity(0.5))
+                    .font(AppFont.Body.smallRegular, color: .Base.white.opacity(0.5))
             }
         }
     }
@@ -78,8 +70,8 @@ private extension LoadingScreen {
     var progressSection: some View {
         VStack(spacing: 10) {
             Text("\(viewModel.progressPercent)%")
-                .appFont(AppFont.Label.largeMedium)
-                .foregroundStyle(.white.opacity(0.6))
+                .contentTransition(.numericText())
+                .font(AppFont.Label.largeMedium, color: .Base.white.opacity(0.6))
                 .monospacedDigit()
 
             GeometryReader { geo in
@@ -97,11 +89,11 @@ private extension LoadingScreen {
                             )
                         )
                         .frame(width: geo.size.width * viewModel.progress, height: 5)
-                        .animation(.linear(duration: 0.05), value: viewModel.progress)
                 }
             }
             .frame(height: 5)
         }
+        .animation(.linear(duration: 0.05), value: viewModel.progress)
     }
 
 }

@@ -33,68 +33,55 @@ private extension CatCardView {
 
     @ViewBuilder
     var avatarSection: some View {
-//        ZStack {
-//            LinearGradient(
-//                colors: cat.image.cardGradient,
-//                startPoint: .topLeading,
-//                endPoint: .bottomTrailing
-//            )
-//
-//            VStack(spacing: 6) {
-//                Image(systemName: "pawprint.fill")
-//                    .font(.system(size: 36, weight: .medium))
-//                    .foregroundStyle(.white.opacity(0.9))
-//
-//                Text(cat.name.prefix(1))
-//                    .appFont(AppFont.Display.mediumBold)
-//                    .foregroundStyle(.white.opacity(0.3))
-//            }
-//        }
-        if let uiImage = UIImage(asset: cat.image) {
-            Image(uiImage: uiImage)
-                .resizable()
-                .scaledToFill()
-                .frame(height: 130)
-                .clipped()
+        Group {
+            if let uiImage = UIImage(asset: cat.image) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFill()
+            } else {
+                ZStack {
+                    LinearGradient(
+                        colors: [Color.blue, Color.green],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                    
+                    VStack(spacing: 6) {
+                        Image(systemName: "pawprint.fill")
+                            .font(.system(size: 36, weight: .medium))
+                            .foregroundStyle(.white.opacity(0.9))
+                        
+                        Text(cat.name.prefix(1))
+                            .font(AppFont.Display.mediumBold)
+                            .foregroundStyle(.white.opacity(0.3))
+                    }
+                }
+            }
         }
+        .frame(height: 130)
+        .clipped()
     }
 
     var infoSection: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(cat.name)
-                .appFont(AppFont.Body.mediumSemiBold)
-                .foregroundStyle(.primary)
+                .font(AppFont.Body.mediumSemiBold, color: .Text.primary)
 
             Text(cat.ageDescription)
-                .appFont(AppFont.Body.smallRegular)
-                .foregroundStyle(.secondary)
+                .font(AppFont.Body.smallRegular, color: .Text.secondary)
 
             HStack(spacing: 4) {
                 Text(cat.sex.symbol)
                     .font(.system(size: 11, weight: .semibold))
                 Text(cat.sex.label)
-                    .appFont(AppFont.Label.largeMedium)
+                    .font(AppFont.Label.largeMedium, color: cat.sex.tint)
             }
             .foregroundStyle(cat.sex.tint)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .fullWidth(.leading)
         .padding(.horizontal, 14)
         .padding(.vertical, 12)
-        .background(Color(.systemBackground))
-    }
-
-}
-
-// MARK: - ImageType visual mapping
-private extension ImageType {
-
-    var cardGradient: [Color] {
-        switch self {
-        case .imageUna:
-            return [Color(red: 0.62, green: 0.30, blue: 0.92), Color(red: 0.38, green: 0.14, blue: 0.80)]
-        case .imageSalem:
-            return [Color(red: 0.98, green: 0.56, blue: 0.22), Color(red: 0.88, green: 0.28, blue: 0.48)]
-        }
+        .background(Color.Background.bg100)
     }
 
 }
@@ -118,8 +105,8 @@ private extension CatSexType {
 
     var tint: Color {
         switch self {
-        case .female: return Color(red: 0.92, green: 0.36, blue: 0.60)
-        case .male:   return Color(red: 0.28, green: 0.52, blue: 0.92)
+        case .female: return .Error.e500
+        case .male:   return .Primary.p500
         }
     }
 

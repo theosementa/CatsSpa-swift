@@ -12,9 +12,18 @@ let package = Package(
             targets: ["DesignSystem"]
         )
     ],
+    dependencies: [
+        .package(name: "Models", path: "../Models")
+    ],
     targets: [
         .target(
-            name: "DesignSystem"
+            name: "DesignSystem",
+            dependencies: [
+                .product(name: "Models", package: "Models")
+            ],
+            resources: [
+                .process("Resources/Images.xcassets")
+            ]
         )
     ]
 )

@@ -35,7 +35,7 @@ public struct HomeScreen: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Image(systemName: "pawprint.fill")
-                        .foregroundStyle(Color(red: 0.62, green: 0.30, blue: 0.92))
+                        .foregroundStyle(Color.Nature.needs)
                 }
             }
         }

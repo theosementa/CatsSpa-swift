@@ -27,19 +27,6 @@ public extension View {
         self.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
     }
     
-    func border(width: CGFloat, edges: [Edge], color: Color) -> some View {
-        overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color))
-    }
-    
-    func roundedBackground(_ style: RoundedBackgroundType) -> some View {
-        return self
-            .background(
-                RoundedRectangle(cornerRadius: style.radius, style: .continuous)
-                    .fill(style.color)
-                    .strokeBorder(style.strokeColor ?? .clear, lineWidth: style.lineWidth)
-            )
-    }
-    
     @ViewBuilder
     func isDisplayed(_ isDisplayed: Bool) -> some View {
         if isDisplayed {
