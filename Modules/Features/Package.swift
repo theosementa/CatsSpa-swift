@@ -7,7 +7,8 @@ let package = Package(
     name: "Features",
     platforms: [.iOS(.v17)],
     products: [
-        .library(name: "Home", targets: ["Home"])
+        .library(name: "Home", targets: ["Home"]),
+        .library(name: "Analytics", targets: ["Analytics"])
     ],
     dependencies: [
         .package(name: "Models", path: "../Models"),
@@ -16,11 +17,20 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Home",
+            name: "Analytics",
             dependencies: [
                 .product(name: "Models", package: "Models"),
                 .product(name: "Providers", package: "Providers"),
                 .product(name: "DesignSystem", package: "DesignSystem")
+            ]
+        ),
+        .target(
+            name: "Home",
+            dependencies: [
+                .product(name: "Models", package: "Models"),
+                .product(name: "Providers", package: "Providers"),
+                .product(name: "DesignSystem", package: "DesignSystem"),
+                .target(name: "Analytics")
             ]
         )
     ]

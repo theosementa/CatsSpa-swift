@@ -8,10 +8,12 @@
 import SwiftUI
 import Models
 import DesignSystem
+import Analytics
 
 public struct HomeScreen: View {
 
     @State private var viewModel = ViewModel()
+    @State private var showAnalytics = false
 
     private let columns = [
         GridItem(.flexible(), spacing: 16),
@@ -31,12 +33,19 @@ public struct HomeScreen: View {
                 .padding(16)
                 .redacted(reason: viewModel.isSkeletonLoading ? .placeholder : [])
             }
+            .navigationDestination(isPresented: $showAnalytics) {
+                AnalyticsScreen()
+            }
             .navigationTitle("PURR-FECT SPA")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Image(systemName: "pawprint.fill")
-                        .foregroundStyle(Color.Primary.p500)
+                    Button {
+                        showAnalytics = true
+                    } label: {
+                        Image(systemName: "pawprint.fill")
+                            .foregroundStyle(Color.Primary.p500)
+                    }
                 }
             }
         }
