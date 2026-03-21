@@ -9,11 +9,15 @@ import SwiftUI
 import Models
 import DesignSystem
 import Analytics
+import Navigation
 
 public struct HomeScreen: View {
 
     @State private var viewModel = ViewModel()
     @State private var showAnalytics = false
+    
+    private let router: Router<AppDestination> = .init()
+    private let routerManager: AppRouterManager = .shared
 
     private let columns = [
         GridItem(.flexible(), spacing: 16),
@@ -23,7 +27,12 @@ public struct HomeScreen: View {
     public init() {}
 
     public var body: some View {
-        NavigationStack {
+        NavigationStackView(
+            router: router,
+            routerManager: routerManager,
+            flow: AppFlow.cat,
+            isTabPage: false
+        ) {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(viewModel.cats) { cat in
@@ -33,16 +42,14 @@ public struct HomeScreen: View {
                 .padding(16)
                 .redacted(reason: viewModel.isSkeletonLoading ? .placeholder : [])
             }
-            .navigationDestination(isPresented: $showAnalytics) {
-                AnalyticsScreen()
-            }
             .navigationTitle("PURR-FECT SPA")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        showAnalytics = true
-                    } label: {
+                    NavigationButtonView(
+                        route: .push,
+                        destination: .analytics(.home)
+                    ) {
                         Image(systemName: "pawprint.fill")
                             .foregroundStyle(Color.Primary.p500)
                     }

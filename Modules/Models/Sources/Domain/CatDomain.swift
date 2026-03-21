@@ -47,7 +47,7 @@ public extension CatDomain {
             .init(
                 name: "Una",
                 image: .imageUna,
-                birthday: .now,
+                birthday: Date.create(day: 28, month: 9, year: 2023),
                 sex: .female
             ),
             .init(
