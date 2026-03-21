@@ -18,6 +18,8 @@ public extension NavigationRegistry {
                 AnyView(EmptyView())
             case .details(let id):
                 AnyView(CatDetailsScreen(catId: id))
+            case .wash(let id):
+                AnyView(CatWashScreen(catId: id))
             }
         }
     }

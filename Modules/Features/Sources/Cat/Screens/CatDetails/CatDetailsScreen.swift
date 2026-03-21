@@ -8,6 +8,7 @@
 import SwiftUI
 import Models
 import DesignSystem
+import Navigation
 
 public struct CatDetailsScreen: View {
 
@@ -69,9 +70,27 @@ private extension CatDetailsScreen {
             headerRow(cat: cat)
             Divider()
             infoGrid(cat: cat)
+            Divider()
+            washButton(cat: cat)
         }
         .padding(24)
         .background(Color.Background.bg100)
+    }
+
+    func washButton(cat: CatDomain) -> some View {
+        NavigationButtonView(route: .sheet(style: .large), destination: .cat(.wash(id: cat.id))) {
+            HStack(spacing: 10) {
+                Image(systemName: "bubbles.and.sparkles.fill")
+                    .font(.system(size: 18, weight: .medium))
+                Text("Give a Wash")
+                    .font(AppFont.Body.mediumSemiBold, color: .white)
+            }
+            .foregroundStyle(.white)
+            .fullWidth()
+            .padding(.vertical, 16)
+            .background(Color.Primary.p500)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+        }
     }
 
     func headerRow(cat: CatDomain) -> some View {
