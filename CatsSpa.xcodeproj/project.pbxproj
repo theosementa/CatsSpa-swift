@@ -17,6 +17,7 @@
 		D9ADB1F92F6D181600FEDA12 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D9ADB1F82F6D181600FEDA12 /* README.md */; };
 		D9ADB1FB2F6D1A1C00FEDA12 /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = D9ADB1FA2F6D1A1C00FEDA12 /* Analytics */; };
 		D9ADB1FF2F6F010B00FEDA12 /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = D9ADB1FE2F6F010B00FEDA12 /* Navigation */; };
+		D9ADB2012F6F067800FEDA12 /* Cat in Frameworks */ = {isa = PBXBuildFile; productRef = D9ADB2002F6F067800FEDA12 /* Cat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 				D9ADB1B32F6C6AA600FEDA12 /* Repositories in Frameworks */,
 				D9ADB1FB2F6D1A1C00FEDA12 /* Analytics in Frameworks */,
 				D9ADB1AF2F6C686B00FEDA12 /* Models in Frameworks */,
+				D9ADB2012F6F067800FEDA12 /* Cat in Frameworks */,
 				D9ADB1FF2F6F010B00FEDA12 /* Navigation in Frameworks */,
 				D9ADB1B52F6C6AA600FEDA12 /* Stores in Frameworks */,
 				D9ADB1BF2F6C731500FEDA12 /* Providers in Frameworks */,
@@ -125,6 +127,7 @@
 				D9ADB1C22F6D0CFE00FEDA12 /* Utilities */,
 				D9ADB1FA2F6D1A1C00FEDA12 /* Analytics */,
 				D9ADB1FE2F6F010B00FEDA12 /* Navigation */,
+				D9ADB2002F6F067800FEDA12 /* Cat */,
 			);
 			productName = CatsSpa;
 			productReference = D9ADB1572F6C646B00FEDA12 /* CatsSpa.app */;
@@ -453,6 +456,10 @@
 		D9ADB1FE2F6F010B00FEDA12 /* Navigation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Navigation;
+		};
+		D9ADB2002F6F067800FEDA12 /* Cat */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Cat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

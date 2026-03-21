@@ -8,6 +8,7 @@
 import SwiftUI
 import Models
 import DesignSystem
+import Navigation
 
 public struct CatCardView: View {
 
@@ -18,12 +19,14 @@ public struct CatCardView: View {
     }
 
     public var body: some View {
-        VStack(spacing: 0) {
-            avatarSection
-            infoSection
+        NavigationButtonView(route: .push, destination: .cat(.details(id: cat.id))) {
+            VStack(spacing: 0) {
+                avatarSection
+                infoSection
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .shadow(color: .black.opacity(0.08), radius: 12, x: 0, y: 4)
         }
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-        .shadow(color: .black.opacity(0.08), radius: 12, x: 0, y: 4)
     }
 
 }
@@ -34,7 +37,7 @@ private extension CatCardView {
     @ViewBuilder
     var avatarSection: some View {
         Group {
-            if let uiImage = UIImage(asset: cat.image) {
+            if let uiImage = UIImage(asset: cat.images.cover) {
                 Image(uiImage: uiImage)
                     .resizable()
                     .scaledToFill()

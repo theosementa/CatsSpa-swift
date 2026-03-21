@@ -10,6 +10,7 @@ import Foundation
 public enum ImageType: String {
     
     case imageUna
+    case unaWash
     case imageSalem
-    
+    case salemWash
 }
