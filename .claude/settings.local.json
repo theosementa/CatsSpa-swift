@@ -6,7 +6,17 @@
       "Bash(mv HomeScreen.swift Screens/Home/HomeScreen.swift)",
       "Bash(mv HomeScreen+ViewModel.swift Screens/Home/HomeScreen+ViewModel.swift)",
       "Bash(mv LoadingScreen.swift Screens/Loading/LoadingScreen.swift)",
-      "Bash(mv LoadingScreen+ViewModel.swift Screens/Loading/LoadingScreen+ViewModel.swift)"
+      "Bash(mv LoadingScreen+ViewModel.swift Screens/Loading/LoadingScreen+ViewModel.swift)",
+      "Bash(ls /Users/tsementa/Code/Swift/Projects/iOS/CatsSpa/*.xcodeproj)",
+      "Bash(ls /Users/tsementa/Code/Swift/Projects/iOS/CatsSpa/*.xcworkspace)",
+      "Bash(xcrun simctl:*)",
+      "Read(//Users/tsementa/**)",
+      "Read(//Users/tsementa/.config/claude/**)",
+      "Read(//Users/tsementa/.config/**)",
+      "Bash(curl -s 'http://127.0.0.1:$\\(cat /Users/tsementa/.blitz/mcp-port\\)/mcp')",
+      "mcp__blitz-macos__get_blitz_screenshot",
+      "Bash(python3 -c \":*)",
+      "Bash(xcrun devicectl:*)"
     ]
   }
 }

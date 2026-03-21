@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "blitz-macos": {
+      "type": "stdio",
+      "command": "bash",
+      "args": [
+        "/Users/tsementa/.blitz/blitz-mcp-bridge.sh"
+      ],
+      "env": {}
+    }
+  }
+}
